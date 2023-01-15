@@ -1,4 +1,14 @@
 
+document.addEventListener("contextmenu", function(event){
+  event.preventDefault();
+}, false);
+
+document.addEventListener("copy", function(event){
+  event.clipboardData.setData("text/plain", "No se permite copiar en esta página web");
+   event.preventDefault();
+}, false);
+
+
 function zoomImages(className) {
   $(`.${className}`).unbind("click").on("click", function() {
     $("#div-zoom-area").css("display", "block");
